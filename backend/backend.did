@@ -1,0 +1,21 @@
+type JobDetail = 
+ record {
+   id: text;
+   image: opt text;
+   name: text;
+   role: text;
+   strengths: vec text;
+   weaknesses: opt vec text;
+ };
+type Job = 
+ record {
+   id: text;
+   image: opt text;
+   name: text;
+   role: text;
+ };
+service : {
+  getJobDetails: (text) -> (opt JobDetail) query;
+  getJobs: () -> (vec Job) query;
+  initializeJobs: () -> () oneway;
+}
